@@ -5,7 +5,8 @@
   
   <script>
 export default {
-    name: 'LoginEcommerce',
+  name: 'LoginEcommerce',
+    
 }
   </script>
   

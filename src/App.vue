@@ -16,15 +16,17 @@
     <h4>{{ frase | formatFrase }}</h4>
     <!-- mixins -->
     <con-mixin :fecha="new Date()" />
+    <formulario-web></formulario-web>
   </div>
 </template>
 
 <script>
-import ConMixin from './components/ConMixin.vue'
-import HelloWorld from './components/HelloWorld.vue'
-import SlotPrueba from './components/SlotPrueba.vue'
-import PadrePrueba from './components/PadrePrueba.vue'
-import FiltrosPruebas from './components/FiltrosPruebas.vue'
+import ConMixin from './components/Clases/Clase 7/ConMixin.vue'
+import HelloWorld from './components/Clases/Clase 7/HelloWorld.vue'
+import SlotPrueba from './components/Clases/Clase 7/SlotPrueba.vue'
+import PadrePrueba from './components/Clases/Clase 7/PadrePrueba.vue'
+import FiltrosPruebas from './components/Clases/Clase 7/FiltrosPruebas.vue'
+import FormularioWeb from './components/FormularioWeb.vue'
 
 
 export default {
@@ -41,7 +43,8 @@ export default {
     SlotPrueba,
     PadrePrueba,
     FiltrosPruebas,
-    ConMixin
+    ConMixin,
+    FormularioWeb
   }
 }
 </script>

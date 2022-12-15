@@ -3,7 +3,7 @@
     <div v-if="errores.length!=0" class="alert alert-danger">
         {{mostrarErrores}}
     </div>
-    <form id="formulario" action="" @submit.prevent="validarFormulario">
+    <form id="formulario" action="" submit.prevent="validarFormulario">
       <div class="row">
         <div class="col col-12">
           <br><br>
@@ -84,7 +84,7 @@
             <div class="col-10"></div>
             <br>
             <div class="col-2">
-              <input type="submit" class="btn btn-primary" value="ENVIAR">
+              <input type="submit" class="btn btn-primary" value="ENVIAR" @add-element="enviar()">
             </div>
             <br>
           </div>
@@ -95,23 +95,45 @@
 </template>
 
 <script>
+
 export default {
   name: 'FormularioWeb',
   data() {
     return {
+      datos: [{ price: 2000, title: 'Papas Fritas', text: "Disfruta de las mejores papas fritas del mercado", description: "Hola" },
+        { title: 'Salsa de Tomate', text: "Este es un texto" },
+        {title: 'Salsa de Tomate', text: "Este es un texto" }],
+      estilo3: { fontSize: '15px', 'width': '60%', 'height': '60%', 'margin': 'auto' },
+      estilo5: { color: '#6DF743' },
       nombre: "",
       edad: null,
       cursos: [],
       comentarios: '',
       documento: '',
       pais: '',
-      errores: '',
-      contador: 1
+      errores: [],
+      contador: 1,
+      email: '',
+      elementos:[]
     }
   },
   methods: {
+    enviar() {
+            this.$emit("add-element", this.elementos);
+    },
     validarFormulario(event) {
       event.preventDefault();
+      const data = {
+        name: this.nombre,
+        edad: this.edad,
+        cursos: [],
+        comentarios: '',
+        document: '',
+        pais: '',
+        errores: [],
+        email: ''
+      }
+      console.log(data)
       if (this.nombre && this.contador>1 && this.edad && this.email) {
         alert("Campos obligatorio están pl")
         setTimeout(() => {
@@ -147,6 +169,9 @@ export default {
       return misErrores;
     },
 
+  },
+  components: {
+    TableEcommerce,
   }
 }
 </script>

@@ -6,7 +6,14 @@
     </div> -->
     <!-- <list-ecommerce :products="datos"></list-ecommerce> -->
     <!-- <detalle-item :product="datos[0]"></detalle-item> -->
-  <carrito-ecommerce :product="datos[0]"></carrito-ecommerce>
+
+    <div class="row">
+      <section class="mx-4 my-4">
+        <formulario-web></formulario-web>
+      </section>
+    </div>
+
+  <!-- <carrito-ecommerce :product="datos[0]"></carrito-ecommerce> -->
   </div>
 </template> 
 <script>
@@ -15,13 +22,14 @@
 // import ListEcommerce from './components/Ecommerce/ListEcommerce.vue';
 // import DetalleItem from './components/Ecommerce/DetalleItem.vue';
 import imagen from './assets/4d95ee421422145ef856c040751d4386.jpg'
-import CarritoEcommerce from './components/Ecommerce/CarritoEcommerce.vue';
+// import CarritoEcommerce from './components/Ecommerce/CarritoEcommerce.vue';
+import FormularioWeb from './components/Clases/Clase 8/FormularioWeb.vue';
 
 export default {
   name: 'App',
   data() {
     return {
-      datos: [{ price: 2000, src: imagen, title: 'Papas Fritas', text: "Disfruta de las mejores papas fritas del mercado", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi doloribus corrupti quis temporibus error perspiciatis rem. Eos modi qui libero, pariatur quam doloremque laboriosam reprehenderit id saepe. Eum, tenetur accusantium" },
+      datos: [{ price: 2000, src: imagen, title: 'Papas Fritas', text: "Disfruta de las mejores papas fritas del mercado", description: "Hola" },
         { src: imagen, title: 'Salsa de Tomate', text: "Este es un texto" },
         { src: imagen, title: 'Salsa de Tomate', text: "Este es un texto" }],
       usuario: { nombre: "José Luis Rivas", edad: 34 },
@@ -29,11 +37,11 @@ export default {
       frase: "Frase para filtro global",
       estilo1: { fontSize: '10px',  'flex-direction': 'row', 'margin': '10px'},
       estilo2: { fontSize: '10px', 'flex-direction': 'row', 'margin': '10px' },
-      estilo3: { fontSize: '15px',  'flex-direction': 'row', 'margin': '10px'},
+      estilo3: { fontSize: '15px', 'width': '60%', 'height': '60%', 'margin': 'auto'},
       estilo4: { color: 'red'},
       estilo5: { color: '#6DF743' },
       estilo6: { color: '#00B9AE' },
-      estilo7: { 'background-color': '#02C3BD' },
+      estilo7: { 'background-color': '#02C3BD', 'width': '60%'},
       estilo8: { 'background-color': '#037171' },
       estilo9: { 'background-color': '#03312E' },
       navbarItems: [
@@ -64,8 +72,8 @@ export default {
     // LoginEcommerce,
     // ListEcommerce,
     // DetalleItem,
-    CarritoEcommerce
-    
+    // CarritoEcommerce,
+    FormularioWeb,
   }
 }
 </script>
